@@ -394,12 +394,12 @@ def fib(n):
 ```python
 def find_duplicates(arr):
     seen = set()
-    duplicates = []
+    duplicates = set()
     for item in arr:
         if item in seen:
-            duplicates.append(item)
+            duplicates.add(item)
         seen.add(item)
-    return duplicates
+    return list(duplicates)
 ```
 
 ### Count frequency

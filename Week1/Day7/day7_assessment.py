@@ -81,7 +81,7 @@ Q6. Which file mode opens for writing and creates if doesn't exist?
 """)
 
 print("""
-Q7. What is the output of: lambda x: x * 2)(5)
+Q7. What is the output of: (lambda x: x * 2)(5)
     a) 10
     b) 25
     c) 52
@@ -243,7 +243,7 @@ the maximum sum of any 'k' consecutive elements in an array.
 
 Example:
     Input: arr=[1, 4, 2, 10, 2, 3, 1, 0, 20], k=4
-    Output: 24 (elements: 2, 10, 2, 10)
+    Output: 24 (elements: 3, 1, 0, 20)
 """)
 
 # Write your code here:
