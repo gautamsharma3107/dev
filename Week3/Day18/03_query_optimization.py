@@ -341,14 +341,15 @@ Two main pagination approaches:
 print("\n1. OFFSET-LIMIT Pagination:")
 page_size = 10
 page = 5  # Get page 5
+offset = (page - 1) * page_size
 
-cursor.execute(f"""
+cursor.execute("""
     SELECT * FROM customers 
     ORDER BY id 
-    LIMIT {page_size} OFFSET {(page - 1) * page_size}
-""")
+    LIMIT ? OFFSET ?
+""", (page_size, offset))
 results = cursor.fetchall()
-print(f"   Page {page} (offset={(page-1)*page_size}): Got {len(results)} records")
+print(f"   Page {page} (offset={offset}): Got {len(results)} records")
 if results:
     print(f"   First ID: {results[0][0]}, Last ID: {results[-1][0]}")
 
@@ -356,12 +357,12 @@ if results:
 print("\n2. KEYSET/CURSOR Pagination:")
 last_id = 40  # ID from previous page
 
-cursor.execute(f"""
+cursor.execute("""
     SELECT * FROM customers 
-    WHERE id > {last_id}
+    WHERE id > ?
     ORDER BY id 
-    LIMIT {page_size}
-""")
+    LIMIT ?
+""", (last_id, page_size))
 results = cursor.fetchall()
 print(f"   Records after ID {last_id}: Got {len(results)} records")
 if results:
