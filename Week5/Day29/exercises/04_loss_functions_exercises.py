@@ -43,7 +43,7 @@ print("-" * 40)
 # TODO: Compare MSE and MAE on the same predictions
 # Generate predictions with some outliers
 # y_true = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# y_pred = [1.1, 2.1, 2.9, 4.2, 5.0, 6.1, 7.0, 8.2, 9.0, 15.0]  # Note the outlier at end
+# y_pred = [1.1, 2.1, 2.9, 4.2, 5.0, 6.1, 7.0, 8.2, 9.0, 25.0]  # Note the large outlier at end
 # Calculate both MSE and MAE - which is more affected by the outlier?
 
 print("\n\nExercise 4: Loss Comparison")

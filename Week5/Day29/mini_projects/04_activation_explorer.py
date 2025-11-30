@@ -29,7 +29,7 @@ def relu_derivative(x):
     pass
 
 def sigmoid(x):
-    """Sigmoid: 1 / (1 + exp(-x))"""
+    """Sigmoid: 1 / (1 + exp(-x)), output range: (0, 1)"""
     pass
 
 def sigmoid_derivative(x):

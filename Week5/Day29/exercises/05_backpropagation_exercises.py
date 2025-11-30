@@ -70,8 +70,8 @@ print("-" * 40)
 # Exercise 5: Numerical Gradient Check
 # TODO: Verify analytical gradient using numerical approximation
 # For f(x) = x^2, df/dx = 2x
-# Numerical gradient: (f(x+eps) - f(x-eps)) / (2*eps)
-# Calculate both at x=3 with eps=0.0001
+# Numerical gradient: (f(x+epsilon) - f(x-epsilon)) / (2*epsilon)
+# Calculate both at x=3 with epsilon=0.0001
 # They should be very close!
 
 print("\n\nExercise 5: Gradient Check")

@@ -26,7 +26,7 @@ class SGD:
         self.lr = learning_rate
     
     def update(self, params, grads):
-        # params = params - lr * grads
+        # new_params = params - lr * grads
         pass
 
 
