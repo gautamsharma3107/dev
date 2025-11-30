@@ -262,7 +262,7 @@ print("-" * 50)
 
 test_codes = [200, 201, 301, 400, 401, 403, 404, 500, 503]
 for code in test_codes:
-    print(f"\nStatus {code}:", end=" ")
+    print(f"\nStatus {code}:")
     handle_response(code)
 
 # ========== REAL-WORLD ERROR HANDLING ==========

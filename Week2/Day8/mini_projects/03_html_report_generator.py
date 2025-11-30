@@ -294,8 +294,10 @@ def demo_user_report():
     
     report_html = generator.generate_report(sections)
     
-    # Save report
-    filename = "/tmp/user_report.html"
+    # Save report using tempfile for cross-platform compatibility
+    import tempfile
+    import os
+    filename = os.path.join(tempfile.gettempdir(), "user_report.html")
     with open(filename, "w") as f:
         f.write(report_html)
     
@@ -346,7 +348,10 @@ def demo_sales_report():
     
     report_html = generator.generate_report(sections)
     
-    filename = "/tmp/sales_report.html"
+    # Save report using tempfile for cross-platform compatibility
+    import tempfile
+    import os
+    filename = os.path.join(tempfile.gettempdir(), "sales_report.html")
     with open(filename, "w") as f:
         f.write(report_html)
     

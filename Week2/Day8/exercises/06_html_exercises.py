@@ -395,7 +395,7 @@ def render_template(template, context):
             return html.escape(str(context.get(var_name, '')))
         return str(context.get(var_name, ''))
     
-    return re.sub(r'{{\\s*(.*?)\\s*}}', replace_var, template)
+    return re.sub(r'{{\s*(.*?)\s*}}', replace_var, template)
 
 Exercise 6.6:
 class HTMLPage:
@@ -420,9 +420,9 @@ class HTMLPage:
         self.body_content = content
     
     def render(self):
-        meta = '\\n    '.join(self.meta_tags)
-        css = '\\n    '.join(self.css_links)
-        js = '\\n    '.join(self.js_scripts)
+        meta = '\n    '.join(self.meta_tags)
+        css = '\n    '.join(self.css_links)
+        js = '\n    '.join(self.js_scripts)
         
         return f'''<!DOCTYPE html>
 <html lang="en">
