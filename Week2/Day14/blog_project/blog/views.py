@@ -73,11 +73,6 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = ['title', 'content']
     template_name = 'blog/post_form.html'
     
-    def form_valid(self, form):
-        """Set the author to the current user before saving."""
-        form.instance.author = self.request.user
-        return super().form_valid(form)
-    
     def test_func(self):
         """Check if the current user is the author of the post."""
         post = self.get_object()
