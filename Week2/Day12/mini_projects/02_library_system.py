@@ -120,12 +120,22 @@ class Member(models.Model):
     
     @property
     def books_borrowed(self):
-        """Get currently borrowed books count"""
+        """Get currently borrowed books count.
+        
+        Note: For performance, consider using annotation when querying
+        multiple members: Member.objects.annotate(
+            borrowed_count=Count('borrow_records', filter=Q(borrow_records__returned_date__isnull=True))
+        )
+        """
         return self.borrow_records.filter(returned_date__isnull=True).count()
     
     @property
     def can_borrow(self):
-        """Check if member can borrow more books"""
+        """Check if member can borrow more books.
+        
+        Calls books_borrowed property which executes a query.
+        Cache the result if checking multiple times.
+        """
         limits = {'basic': 2, 'premium': 5, 'student': 3}
         return self.books_borrowed < limits.get(self.membership_type, 2)
 
@@ -165,9 +175,12 @@ class BorrowRecord(models.Model):
     
     @property
     def days_overdue(self):
-        if not self.is_overdue:
+        if self.returned_date:
             return 0
-        return (timezone.now().date() - self.due_date).days
+        today = timezone.now().date()
+        if today <= self.due_date:
+            return 0
+        return (today - self.due_date).days
 '''
 
 print(MODELS_CODE)
