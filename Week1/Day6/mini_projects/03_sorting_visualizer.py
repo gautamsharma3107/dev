@@ -146,7 +146,9 @@ class SortingVisualizer:
         right = []
         
         for val in arr:
-            self.comparisons += 1
+            # Count comparisons only for actual comparisons (excluding pivot itself)
+            if val != pivot:
+                self.comparisons += 1
             if val < pivot:
                 left.append(val)
             elif val == pivot:
@@ -215,10 +217,12 @@ class SortingVisualizer:
             if arr[j] <= pivot:
                 i += 1
                 if i != j:
+                    # Save values before swap for correct message
+                    val_i, val_j = arr[i], arr[j]
                     arr[i], arr[j] = arr[j], arr[i]
                     self.swaps += 1
                     if show_steps:
-                        print(f"{indent}   Swap arr[{i}]={arr[j]} with arr[{j}]={arr[i]}")
+                        print(f"{indent}   Swap arr[{i}]={val_i} with arr[{j}]={val_j}")
         
         arr[i + 1], arr[high] = arr[high], arr[i + 1]
         self.swaps += 1
