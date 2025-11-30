@@ -11,6 +11,7 @@ Key Concepts:
 """
 
 import logging
+import time
 from typing import Dict, Any, Optional, List, TypeVar, Generic
 from dataclasses import dataclass
 from enum import Enum
@@ -313,7 +314,6 @@ def process_user_request(user_id: int):
 
 
 # Pattern 3: Retry with backoff
-import time
 
 
 def retry_with_backoff(

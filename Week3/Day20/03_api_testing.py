@@ -17,6 +17,9 @@ from dataclasses import dataclass
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 
+# Note: 'requests' is imported inside WeatherService methods to demonstrate
+# mocking patterns. In production code, imports should be at the top of the file.
+
 # ========== INTRODUCTION TO API TESTING ==========
 print("=" * 60)
 print("API TESTING INTRODUCTION")

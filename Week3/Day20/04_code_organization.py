@@ -11,6 +11,7 @@ Key Concepts:
 """
 
 import os
+import hashlib
 from typing import List, Dict, Any, Optional, Protocol
 from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
@@ -215,7 +216,6 @@ class UserService:
     
     def _hash_password(self, password: str) -> str:
         """Hash password (simplified - use bcrypt in production)."""
-        import hashlib
         return hashlib.sha256(password.encode()).hexdigest()
 
 
