@@ -32,8 +32,8 @@ Write your code below:
 # class ProductSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = Product
-#         fields = ______
-#         read_only_fields = ______
+#         fields = # TODO: specify which fields to include (e.g., '__all__' or a list)
+#         read_only_fields = # TODO: specify read-only fields as a list
 
 
 # Exercise 2: Custom Validation

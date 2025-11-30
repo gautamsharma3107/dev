@@ -253,10 +253,10 @@ class BookListCreate(generics.ListCreateAPIView):
     def get_queryset(self):
         queryset = Book.objects.filter(is_available=True)
         
-        # Filter by author from query params
-        author = self.request.query_params.get('author', None)
-        if author:
-            queryset = queryset.filter(author__icontains=author)
+        # Filter by author name from query params (e.g., ?author=John)
+        author_name = self.request.query_params.get('author', None)
+        if author_name:
+            queryset = queryset.filter(author__name__icontains=author_name)
         
         return queryset
     
