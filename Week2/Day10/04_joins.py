@@ -251,10 +251,10 @@ from the right table. Non-matching rows have NULL values.
     +----+          +----+--------+
     | id |          | id | user_id|
     +----+          +----+--------+
-    | 1  |<-------->| 1  |   1    | ← Match!
-    | 2  |<-------->| 3  |   2    | ← Match!
-    | 3  |<-------->| 4  |   3    | ← Match!
-    | 4  |<-------->| 7  |   4    | ← Match!
+    | 1  |--------->| 1  |   1    | ← Match!
+    | 2  |--------->| 3  |   2    | ← Match!
+    | 3  |--------->| 4  |   3    | ← Match!
+    | 4  |--------->| 7  |   4    | ← Match!
     | 5  |--------->|    | NULL   | ← No match, but included
     | 6  |--------->|    | NULL   | ← No match, but included
     +----+          +----+--------+
