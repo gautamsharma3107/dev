@@ -61,7 +61,9 @@ from datetime import datetime, timedelta
 from typing import Optional
 
 # Configuration
-SECRET_KEY = "your-secret-key-change-in-production"
+# ⚠️ SECURITY WARNING: Never use this secret key in production!
+# Generate a secure key with: openssl rand -hex 32
+SECRET_KEY = "your-secret-key-change-in-production"  # CHANGE THIS IN PRODUCTION!
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 

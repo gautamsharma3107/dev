@@ -129,12 +129,13 @@ from sqlalchemy.orm import relationship
 from database import Base
 
 # Association table for Cart and Products
+# Note: For columns with extra data like quantity, consider using an Association Object pattern
 cart_items = Table(
     "cart_items",
     Base.metadata,
     Column("cart_id", Integer, ForeignKey("carts.id"), primary_key=True),
     Column("product_id", Integer, ForeignKey("products.id"), primary_key=True),
-    Column("quantity", Integer, default=1)
+    Column("quantity", Integer, nullable=False)  # Set quantity when inserting
 )
 
 class Cart(Base):

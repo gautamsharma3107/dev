@@ -121,6 +121,7 @@ print("-" * 40)
 
 config_code = '''
 # config.py
+# Note: Requires Pydantic v2+. For Pydantic v1, use: from pydantic import BaseSettings
 from pydantic_settings import BaseSettings
 from functools import lru_cache
 
@@ -128,6 +129,7 @@ class Settings(BaseSettings):
     app_name: str = "Full-Featured API"
     debug: bool = True
     database_url: str = "sqlite:///./app.db"
+    # ⚠️ SECURITY WARNING: Change this in production! Generate with: openssl rand -hex 32
     secret_key: str = "your-super-secret-key-change-in-production"
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
