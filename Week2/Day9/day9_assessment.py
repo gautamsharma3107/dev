@@ -162,7 +162,9 @@ print("\n" + "=" * 60)
 print("TEST COMPLETE!")
 print("=" * 60)
 print("""
-When done, check your answers with the answer key below.
+When done, check your answers with the answer key.
+The answer key is located in: solutions/day9_assessment_answers.py
+
 You need at least 10 points to pass!
 
 Remember:
@@ -172,84 +174,3 @@ Remember:
 
 Good luck! 🚀
 """)
-
-"""
-ANSWER KEY (Don't look until you're done!)
-============================================
-
-Section A (MCQ - 6 points):
-Q1: b) Initializes a new Git repository
-Q2: c) git add .
-Q3: b) To specify files that should not be tracked by Git
-Q4: c) git checkout -b new-branch
-Q5: c) add → commit → push
-Q6: b) Downloads changes from remote and merges them
-
-Section B (Coding - 6 points):
-
-Q7 (2 points): 
-git init
-git add .
-git commit -m "Initial commit"
-
-Q8 (2 points):
-git checkout -b feature/login   (or git branch feature/login; git checkout feature/login)
-git checkout main
-git merge feature/login
-git branch -d feature/login
-
-Q9 (2 points - any 5 valid patterns):
-# Python .gitignore
-__pycache__/
-*.py[cod]
-*.so
-.env
-venv/
-.venv/
-env/
-*.egg-info/
-dist/
-build/
-.pytest_cache/
-.coverage
-*.log
-.idea/
-.vscode/
-
-Section C (Conceptual - 2 points):
-
-Q10:
-git merge:
-- Combines two branches by creating a merge commit
-- Preserves the full history of both branches
-- Non-destructive - original branches remain unchanged
-- Use when: working on shared branches, want to preserve history
-
-git rebase:
-- Moves commits from one branch onto another
-- Creates a linear history (no merge commits)
-- Rewrites commit history
-- Use when: cleaning up local commits before sharing,
-  keeping feature branch updated with main
-- Never use on public/shared branches
-
-Example when to use each:
-- Merge: When merging a feature branch into main (standard workflow)
-- Rebase: When updating your local feature branch with latest main changes
-
-SCORING:
-Section A: 6 points (1 point each)
-Section B: 6 points (2 points each)
-Section C: 2 points
-
-Total: 14 points
-Passing: 10 points (70%)
-
-If you scored below 70%, review:
-- Basic commands (if Q1, Q2, Q5 wrong)
-- .gitignore (if Q3, Q9 wrong)
-- Branching (if Q4, Q8 wrong)
-- Remote operations (if Q6 wrong)
-- Git workflow (if Q7 wrong)
-- Advanced concepts (if Q10 wrong)
-"""

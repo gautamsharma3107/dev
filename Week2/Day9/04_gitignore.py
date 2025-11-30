@@ -486,7 +486,26 @@ print("=" * 60)
 
 # Here's a Python script that could generate a .gitignore
 def generate_gitignore(project_type='python'):
-    """Generate a .gitignore content based on project type."""
+    """
+    Generate a .gitignore content based on project type.
+    
+    Args:
+        project_type (str): The type of project. Options are:
+            - 'python': Python project patterns (default)
+            - 'node': Node.js project patterns
+            - 'web': Web project patterns
+    
+    Returns:
+        str: The .gitignore content as a string with appropriate patterns
+             for the specified project type, plus common patterns.
+    
+    Example:
+        >>> content = generate_gitignore('python')
+        >>> print(content)  # Prints Python .gitignore patterns
+        
+        >>> content = generate_gitignore('node')
+        >>> print(content)  # Prints Node.js .gitignore patterns
+    """
     
     common = """# Operating System
 .DS_Store
