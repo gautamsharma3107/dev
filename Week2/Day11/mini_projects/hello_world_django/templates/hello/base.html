@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Hello Django{% endblock %}</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #092e20 0%, #1a5f4a 100%);
+            color: white;
+            padding: 30px 20px;
+            margin-bottom: 30px;
+            border-radius: 0 0 10px 10px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        main {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            min-height: 300px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            margin-top: 30px;
+        }
+        h2 {
+            color: #092e20;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #1a5f4a;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 10px;
+            background: #f9f9f9;
+            margin-bottom: 5px;
+            border-left: 3px solid #1a5f4a;
+        }
+        a.btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #092e20;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        a.btn:hover {
+            background: #1a5f4a;
+        }
+        {% block extra_css %}{% endblock %}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎉 Hello Django!</h1>
+            <nav>
+                <a href="{% url 'hello:home' %}">🏠 Home</a>
+                <a href="{% url 'hello:about' %}">ℹ️ About</a>
+                <a href="{% url 'hello:greet' name='Django' %}">👋 Greet Django</a>
+            </nav>
+        </header>
+        
+        <main>
+            {% block content %}
+            <p>Welcome to Django!</p>
+            {% endblock %}
+        </main>
+        
+        <footer>
+            <p>🐍 Built with Django - Day 11 Mini Project</p>
+            <p>Part of the 2-Month Python Web & AI/ML Bootcamp</p>
+        </footer>
+    </div>
+</body>
+</html>
