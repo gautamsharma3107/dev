@@ -81,9 +81,19 @@ ipython_config.py
 
 # celery beat schedule file
 celerybeat-schedule
+celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
+
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
 
 # Environments
 .env
@@ -116,5 +126,15 @@ dmypy.json
 *.swo
 
 # OS files
+# Pyre type checker
+.pyre/
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
 .DS_Store
 Thumbs.db
