@@ -123,6 +123,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# IDE
+.idea/
 .dmypy.json
 dmypy.json
 
@@ -147,6 +150,9 @@ dmypy.json
 .DS_Store
 Thumbs.db
 
+# Generated plots
+*.png
+*.csv
 # Distribution / packaging
 *.egg-info/
 dist/
