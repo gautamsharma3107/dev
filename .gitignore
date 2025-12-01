@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Virtual environment
+venv/
+env/
+.venv/
 # C extensions
 *.so
 
@@ -136,6 +140,15 @@ dmypy.json
 .idea/
 *.swp
 *.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
 *~
 
 # Jupyter Notebook
