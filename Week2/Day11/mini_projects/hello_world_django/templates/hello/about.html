@@ -1,0 +1,39 @@
+{% extends 'hello/base.html' %}
+
+{% block title %}{{ title }} - Hello Django{% endblock %}
+
+{% block content %}
+<h2>{{ title }}</h2>
+<p>{{ description }}</p>
+
+<div style="margin-top: 30px;">
+    <h3>👤 Author</h3>
+    <p>{{ author }}</p>
+</div>
+
+{% if technologies %}
+<div style="margin-top: 30px;">
+    <h3>🛠️ Technologies Used</h3>
+    <ul>
+    {% for tech in technologies %}
+        <li>{{ tech }}</li>
+    {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<div style="margin-top: 30px; padding: 20px; background: #e3f2fd; border-radius: 5px;">
+    <h4>📚 What I learned:</h4>
+    <ul style="list-style-type: disc; padding-left: 20px;">
+        <li>Creating Django projects and apps</li>
+        <li>Setting up URL routing with path()</li>
+        <li>Writing function-based views</li>
+        <li>Using Django templates with inheritance</li>
+        <li>Passing context data to templates</li>
+        <li>Using template tags like for loops and url tags</li>
+        <li>Applying template filters like date formatting</li>
+    </ul>
+</div>
+
+<a href="{% url 'hello:home' %}" class="btn">← Back to Home</a>
+{% endblock %}

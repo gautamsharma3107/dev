@@ -86,6 +86,15 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
 # Environments
 .env
 .venv
@@ -118,3 +127,7 @@ dmypy.json
 *.swp
 *.swo
 *~
+
+# OS
+.DS_Store
+Thumbs.db
