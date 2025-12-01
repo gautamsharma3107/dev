@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Virtual environment
+venv/
+env/
+.venv/
 # C extensions
 *.so
 
@@ -35,12 +39,17 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 htmlcov/
 .tox/
+.nox/
 .coverage
 .coverage.*
 .cache
 nosetests.xml
 coverage.xml
 *.cover
+.hypothesis/
+.pytest_cache/
+
+*.py,cover
 .hypothesis/
 .pytest_cache/
 
@@ -51,6 +60,8 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
+db.sqlite3
+db.sqlite3-journal
 
 # Flask stuff:
 instance/
@@ -68,14 +79,28 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# IPython
+profile_default/
+ipython_config.py
+
 # pyenv
 .python-version
 
 # celery beat schedule file
 celerybeat-schedule
+celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
+
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
 
 # Environments
 .env
@@ -101,9 +126,25 @@ venv.bak/
 
 # IDE
 .idea/
+.dmypy.json
+dmypy.json
+
+# IDE
+.idea/
+.vscode/
 *.swp
 *.swo
 *~
+
+
+# OS files
+# Pyre type checker
+.pyre/
+
+# IDE
+.idea/
+*.swp
+*.swo
 
 # OS
 .DS_Store
@@ -112,3 +153,25 @@ Thumbs.db
 # Generated plots
 *.png
 *.csv
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Database
+*.db
+*.sqlite3
+
+# Local settings
+local_settings.py
+
+# Secrets
+*.pem
+*.key
+# OS
+.DS_Store
+Thumbs.db
