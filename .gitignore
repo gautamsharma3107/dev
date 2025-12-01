@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Virtual environment
+venv/
+env/
+.venv/
 # C extensions
 *.so
 
@@ -42,6 +46,9 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
+.hypothesis/
+.pytest_cache/
+
 *.py,cover
 .hypothesis/
 .pytest_cache/
@@ -53,6 +60,8 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
+db.sqlite3
+db.sqlite3-journal
 
 # Flask stuff:
 instance/
@@ -79,9 +88,19 @@ ipython_config.py
 
 # celery beat schedule file
 celerybeat-schedule
+celerybeat.pid
 
 # SageMath parsed files
 *.sage.py
+
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
 
 # Environments
 .env
@@ -114,6 +133,39 @@ dmypy.json
 *.swo
 *~
 
+
+# OS files
+# Pyre type checker
+.pyre/
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Database
+*.db
+*.sqlite3
+
+# Local settings
+local_settings.py
+
+# Secrets
+*.pem
+*.key
 # OS
 .DS_Store
 Thumbs.db
