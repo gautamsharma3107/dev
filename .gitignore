@@ -28,6 +28,17 @@ wheels/
 .installed.cfg
 *.egg
 
+# Virtual environments
+venv/
+ENV/
+env/
+
+# IDE settings
+.idea/
+*.swp
+*.swo
+
+# OS files
 # PyInstaller
 *.manifest
 *.spec
