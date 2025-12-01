@@ -1,3 +1,26 @@
+# Model files
+saved_models/
+*.keras
+*.h5
+*.pkl
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+
+# Virtual environments
+venv/
+env/
+.env/
+
+# IDE
+.idea/
+*.swp
+*.swo
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
